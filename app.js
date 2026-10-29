@@ -1,3 +1,19 @@
+// 40.Shundayfunksiyayasangki,ushbufunksiyastringniichida
+// 19
+// DASTURLASHDANMASALALAR
+// nechtabelgiborliginiaytsin.Bundalengthpropertisidanfoydalan
+// mangvarekursivfunksiyaishlating
+
+// function uzunlik(str) {
+//   let sana = 0;
+//   for (let i of str) {
+//     sana++;
+//   }
+//   return sana;
+// }
+
+// console.log(uzunlik("salom"));
+
 // 41.Funksiya2taargumentqabulqiladi. Birinchiargument
 // ikkinchiargumentdankattaemas.Agarbirinchiargumentni
 // ikkinchisigabo’linsa,funksiyatrueqaytaradiaksholdafalse
@@ -57,7 +73,7 @@
 // “ism,familiya”formatdagiarringqaytarsin.
 
 // function ismFam(ism, fam) {
-//   return ism + "," + fam;
+//   return `${ism} ${fam}`;
 // }
 // console.log(ismFam("Otabek", "Umarov"));
 
@@ -69,14 +85,10 @@
 // bug(false) "it'sagoodday
 
 // const two_words = function (arr) {
-//   let count = 0;
-//   for (let i of arr) {
-//     if (i.includes(" ")) count++;
-//   }
-//   return count > 1 ? false : true;
+//   return arr ? "sad days" : "it's a good day";
 // };
 
-// console.log(two_words("sad days"));
+// console.log(two_words(true));
 
 //=======================================================================
 
@@ -93,14 +105,26 @@
 // }
 // console.log(tushirMassiv([1, 2, 3], 1));
 
+////=======================================================================
+
+// 47.Funksiyaargumentsifatidaovozberibqo’llabquvvatlashlar
+// sonivaovozberibqo’llamaganlarsoniniqabulqiladi.Funksiya
+// natijaniqaytarsin.
+
+// function ovozlar(upvotes, downvotes) {
+//   return upvotes - downvotes;
+// }
+
+// console.log(ovozlar(2, 33));
+
 //=======================================================================
 // 48.Funksiyasonqabulqilsa, ushbusonningnegativiniqay
 // tarsin.
 
 // const negativ = function (son) {
-//   return son * -1;
+//   return -Math.abs(son);
 // };
-// console.log(negativ(-1));
+// console.log(negativ(3));
 
 //=======================================================================
 
@@ -126,7 +150,7 @@
 // funksiya true qaytarsin aks holda false.
 
 // function kinogaKirish(yosh, otaOna) {
-//   return yosh >= 15 && otaOna === true;
+//   return yosh >= 15 || otaOna === true;
 // }
 // console.log(kinogaKirish(12, true));
 
@@ -225,13 +249,7 @@
 // 400gahambo’linganidaginakabisahisoblanadi.
 
 // const kabisa = function (yil) {
-//   if (yil % 4 == 0) {
-//     return true;
-//   } else if (yil % 100 == 0 && yil % 400 == 0) {
-//     return true;
-//   } else {
-//     return false;
-//   }
+//   return (yil % 4 === 0 && yil % 100 !== 0) || yil % 400 === 0;
 // };
 
 // console.log(kabisa(1968));
@@ -321,9 +339,13 @@
 
 //=======================================================================
 
+// 65.Funksiyamassivebilanindexqabulqilsa,ushbuindexdagi
+// massivelementiniqaytarsin.
+// !!! Indexniengkichikqiymatgaqarabyaxlitlang.
+
 // const arrElement = (arr, index) => {
 //   let i = index;
-//   return arr.indexOf(i);
+//   return arr[Math.floor(index)];
 // };
 
 // console.log(arrElement([1, 2, 3, 4, 5, 6], 10 / 2));
@@ -418,7 +440,7 @@
 // kubikchalar sonini qaytasin.
 
 // function kubikchalar(num) {
-//   return 3 ** 2 * 6;
+//   return num ** 2 * 6;
 // }
 
 // console.log(kubikchalar(3));
@@ -430,11 +452,11 @@
 // odamlar soni aniq bo’lsa funksiya kamida nechta avtomobil
 // kerakligini qaytarsin.
 
-// const sayohat = function (odamlar) {
-//   return odamlar % 4;
-// };
+const sayohat = function (odamlar) {
+  return Math.ceil(odamlar / 5);
+};
 
-// console.log(sayohat(5));
+console.log(sayohat(5));
 
 //=======================================================================
 
@@ -836,19 +858,19 @@
 
 //=======================================================================
 
-function Namuna(str) {
-  const [tag, count] = str.split("*");
-  let result = "";
+// function Namuna(str) {
+//   const [tag, count] = str.split("*");
+//   let result = "";
 
-  for (let i = 1; i <= Number(count); i++) {
-    if (tag === "li") {
-      result += `${i}.\n`;
-    } else {
-      result += `<${tag}></${tag}>\n`;
-    }
-  }
+//   for (let i = 1; i <= Number(count); i++) {
+//     if (tag === "li") {
+//       result += `${i}.\n`;
+//     } else {
+//       result += `<${tag}></${tag}>\n`;
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(Namuna("div*2"));
+// console.log(Namuna("div*2"));
