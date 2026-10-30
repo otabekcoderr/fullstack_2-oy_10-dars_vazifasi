@@ -452,11 +452,11 @@
 // odamlar soni aniq bo’lsa funksiya kamida nechta avtomobil
 // kerakligini qaytarsin.
 
-const sayohat = function (odamlar) {
-  return Math.ceil(odamlar / 5);
-};
+// const sayohat = function (odamlar) {
+//   return Math.ceil(odamlar / 5);
+// };
 
-console.log(sayohat(5));
+// console.log(sayohat(5));
 
 //=======================================================================
 
@@ -578,7 +578,7 @@ console.log(sayohat(5));
 // "Today, I am feeling neutral
 
 // function sozQosh(str) {
-//   return `I am feeling ${str}`;
+//   return `Today, I am feeling ${str}`;
 // }
 
 // console.log(sozQosh("happy"));
@@ -610,9 +610,9 @@ console.log(sayohat(5));
 // yokikichikharflardayozilganiahamiyatsizdeboling
 
 // function tengmi(soz1, soz2) {
-//   return soz1.length == soz2.length;
+//   return soz1.toLowerCase() === soz2.toLowerCase();
 // }
-// console.log(tengmi("salom", "salo"));
+// console.log(tengmi("salom", "salom"));
 
 //=======================================================================
 
@@ -644,7 +644,7 @@ console.log(sayohat(5));
 // endCorona(30000,25000,390205) 79
 
 // function endCorona(fixed, fixing, notfix) {
-//   return Math.round(notfix / (fixed - fixing));
+//   return Math.ceil(notfix / (fixed - fixing));
 // }
 // console.log(endCorona(3000, 2000, 50699));
 
@@ -736,7 +736,7 @@ console.log(sayohat(5));
 
 // function bolinsiz(num_1, num_2) {
 //   let num = 0;
-//   for (let i = num_1; i; i++) {
+//   for (let i = num_1 + 1; i; i++) {
 //     if (i % num_2 == 0) {
 //       num += i;
 //       break;
@@ -745,7 +745,7 @@ console.log(sayohat(5));
 //   return num;
 // }
 
-// console.log(bolinsiz(14, 11));
+// console.log(bolinsiz(16, 8));
 
 //=======================================================================
 
@@ -820,7 +820,7 @@ console.log(sayohat(5));
 // o’tishiniaytsin.
 
 // function qanchaMasofa(masofa) {
-//   return masofa.reduce((sum, i) => sum + i, 0);
+//   return Math.abs(masofa.reduce((sum, i) => sum + i, 0));
 // }
 
 // console.log(qanchaMasofa([3, 4, -5, -2]));
@@ -858,19 +858,9 @@ console.log(sayohat(5));
 
 //=======================================================================
 
-// function Namuna(str) {
-//   const [tag, count] = str.split("*");
-//   let result = "";
+function Namuna(str) {
+  const [tag, count] = str.split("*");
+  return `<${tag}></${tag}>`.repeat(Number(count));
+}
 
-//   for (let i = 1; i <= Number(count); i++) {
-//     if (tag === "li") {
-//       result += `${i}.\n`;
-//     } else {
-//       result += `<${tag}></${tag}>\n`;
-//     }
-//   }
-
-//   return result;
-// }
-
-// console.log(Namuna("div*2"));
+console.log(Namuna("div*2"));
